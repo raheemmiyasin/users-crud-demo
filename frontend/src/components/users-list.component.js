@@ -58,7 +58,7 @@ export default class UsersList extends Component {
 
           <ul className="list-group">
             {users &&
-              users.map((user, index) => (
+             users.map((user, index) => (
                 <li
                   className={
                     "list-group-item " +
