@@ -1,5 +1,6 @@
 const { MongoClient } = require("mongodb");
 const express = require("express");
+var cors = require('cors')
 const ObjectId = require('mongodb').ObjectId;
 const bodyParser = require("body-parser");
 
@@ -58,6 +59,8 @@ const listUsers = async (req, res) => {
 const updateUser = async (req, res) => {
   const { id } = req.params;
   const input = req. body;
+  delete input._id, input.deleteAt, input.createdAt, input.updatedAt;
+
   input.updatedAt = Date.now();
   try {
     const client = await getMongoClient();
@@ -99,6 +102,7 @@ const deleteUser = async (req, res) => {
   };
 
 const app = express();
+app.use(cors())
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.json());
 app.get("/users", listUsers);
