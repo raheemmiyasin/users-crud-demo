@@ -1,7 +1,8 @@
 # users-crud-demo
 Prerequisite requirements
 
-  - install NodeJs v14
+  - NodeJs v14
+  - MongoDB
 
 Services list
 
