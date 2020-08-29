@@ -2,34 +2,16 @@
 Prerequisite requirements
 
   - NodeJs v14
-  - MongoDB
+  - Docker
+  - docker-compose
 
 Services list
 
   - frontend
   - backend
 
-How to run frontend:
-```sh
-$ cd frontend
-```
-```sh
-$ yarn
-```
-```sh
-$ yarn build
-```
-```sh
-$ serve -s build
-```
-How to run backend:
-```sh
-$ cd backend
-```
-```sh
-$ yarn
-```
-```sh
-$ yarn start
-```
+How to run :
 
+```sh
+$ docker-compose up
+```
