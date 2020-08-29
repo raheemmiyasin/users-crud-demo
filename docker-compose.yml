@@ -1,0 +1,28 @@
+version: "3"
+
+services:
+
+  frontend:
+    build:
+      context: frontend
+    command: node server.js 80
+    environment:
+      API_URL: http://backend/
+    ports:
+      - "80:80"
+
+  backend:
+    build:
+      context: backend
+    command: node server.js 80
+    environment:
+      MONGO_URI: mongodb://mongodb
+
+  mongodb:
+    image: mongo:4.4
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:
+    driver: local
